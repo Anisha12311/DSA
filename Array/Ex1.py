@@ -1,3 +1,5 @@
+# https://www.geeksforgeeks.org/top-50-array-coding-problems-for-interviews/
+
 # https://leetcode.com/problems/two-sum/description/
 
 num = [2,7,11,12]
@@ -100,3 +102,113 @@ def largest_t_element(nums):
 
 
 print("Third",largest_t_element(nums1))
+
+
+# Maximum product of a triplet (subsequence of size 3) in array
+arr = [1, -4, 3, -6, 7, 0]
+def max_product(arr):
+    if len(arr) < 3:
+        return -1
+    num = sorted(arr)
+    max1 = num[-1] * num[-2] * num[-3]
+    max2 = num[0] * num[1] * num[-1]
+    
+    max_product1 = max(max1, max2)    
+    return max_product1
+
+
+print("Max Product ", max_product(arr))
+    
+    
+# Maximum consecutive one’s (or zeros) in a binary array
+
+arr_ones  = [1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1]
+arr_ones2 = [0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+
+def max_ones(nums):
+    
+    ones = 0
+    
+    
+    for num in nums:
+        
+        if num == 1:
+            ones += 1
+        else: 
+            ones = 0
+            
+    return ones 
+
+print("Ones ", max_ones(arr_ones2))
+        
+        
+# Move all zeros to end of array
+
+zeros = [10, 20, 30]
+zeros1 = [1, 2, 0, 4, 3, 0, 5, 0]
+zeros2 = [0, 0]
+
+def move_zeros(zeros):
+    
+    non_zeros = []
+    with_zeros = []
+    
+    if 0 in zeros:
+        for num in zeros:
+            if num != 0:
+                non_zeros.append(num)
+                
+            elif num == 0:
+                with_zeros.append(num)
+    
+        return non_zeros + with_zeros
+    
+    return zeros
+
+    
+print("Zeros : ",move_zeros(zeros2))
+
+
+# Reverse an Array in groups of given size (Reverse three three group)
+
+arr_reverse = [1, 2, 3, 4, 5, 6, 7, 8]
+arr_reverse1 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+K = 5 
+K1 = 3
+
+def reverse_arr(arr,k):
+    
+    if k > len(arr):
+        return arr[::-1]
+    total = 0
+    result = []
+    while total < len(arr):
+        first = arr[total:total+k]
+       
+        result.extend(first[::-1])
+        total += k
+    return result
+    
+    
+print("Reverse array", reverse_arr(arr_reverse, K))
+    
+# Rotate an Array by d – Counterclockwise or Left
+
+
+arr_rotate = [1, 2, 3, 4, 5, 6]
+arr_rotate1 = [1, 2, 3]
+d = 2
+d1 = 4
+
+def rotate_arr(arr,d):
+    result = []
+    d = d % len(arr)
+    print(d)
+    
+    first = arr[:d]
+    second = arr[d:]
+    result  = second + first
+    
+    return result
+
+print("Rotate arr", rotate_arr(arr_rotate, d))
