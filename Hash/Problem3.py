@@ -40,3 +40,23 @@ def remove_duplicate1(arr):
     return arr[:n]
 
 print(remove_duplicate1(char_array))
+
+
+# Given an array of n numbers, create an algorithm which displays all pairs whose sum is S.
+
+arr = [2,4,5,1,7,8,3,3] 
+s = 6
+
+def find_pairs(arr,s):
+    result = set()
+    pairs = []
+
+    for i in arr:
+        second = s-i
+        if second in result:
+            pairs.append((i, second))          
+        result.add(i)
+    return pairs
+
+
+print(find_pairs(arr,s))

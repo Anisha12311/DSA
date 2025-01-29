@@ -177,3 +177,8 @@ def non_repeat(char):
     
 
 print(non_repeat(char))
+
+
+#Given an array of n numbers, create an algorithm which displays all pairs whose sum is S.
+
+
