@@ -13,21 +13,15 @@ def level_order_traversal(root):
         while queue:
             
             current = queue.pop(0)
-            
+           
             print(current.data, end = " ")
             
             if current.left:
                 queue.append(current.left)
-            
-            
-                
-               
+
             if current.right:
                 queue.append(current.right)
-                
-                
-        
-        
+
 
 root = TreeNode(1)
 
