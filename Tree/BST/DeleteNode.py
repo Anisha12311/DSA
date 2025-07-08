@@ -37,6 +37,15 @@ def delete_node(root,key):
         
     return root
     
+    
+def deleteNode(root, key):
+    
+    if not root:
+        return False
+    
+    
+    
+    
 def in_order(root):
     
     if not root:
