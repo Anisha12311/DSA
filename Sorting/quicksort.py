@@ -5,7 +5,7 @@ def partition(arr, lb, ub):
     end = ub
     
     while start < end:
-        while arr[start] <= ub and  arr[start] <= arr[pivot]:
+        while start <= end and  arr[start] <= arr[pivot]:
             start += 1
         while arr[end] > arr[pivot]:
             end -= 1
